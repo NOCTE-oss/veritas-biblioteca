@@ -1,8 +1,96 @@
 <script setup>
-defineProps({ nome: { type: String, default: 'Veritas' }, descricao: { type: String, default: 'Biblioteca virtual • Grandes livros, grandes perspectivas.' }, links: { type: Array, default: () => [{id:1,nome:'Início',href:'#inicio'},{id:2,nome:'Biblioteca',href:'#livros'},{id:3,nome:'Categorias',href:'#categorias'},{id:4,nome:'Sobre',href:'#sobre'}] } })
+defineProps({
+  nome: { type: String, default: 'Biblioteca' },
+  descricao: {
+    type: String,
+    default: 'Clássicos para quem gosta de pensar.',
+  },
+  links: {
+    type: Array,
+    default: () => [
+      { id: 1, nome: 'Início', href: '#' },
+      { id: 2, nome: 'Livros', href: '#livros' },
+      { id: 3, nome: 'Categorias', href: '#categorias' },
+      { id: 4, nome: 'Contato', href: '#contato' },
+    ],
+  },
+})
+
 const ano = new Date().getFullYear()
 </script>
-<template><footer class="app-footer"><div class="topo"><a class="marca" href="#inicio"><span class="simbolo">♧</span><span><strong class="nome">{{ nome }}</strong><small>BIBLIOTECA VIRTUAL</small></span></a><p class="frase">{{ descricao }}</p><nav class="menu" aria-label="Links do rodapé"><a v-for="link in links" :key="link.id" :href="link.href" class="link">{{ link.nome }}</a></nav></div><div class="base"><span class="copy">© {{ ano }} {{ nome }}. Todos os direitos reservados.</span><span class="assinatura">FEITO PARA QUEM BUSCA CONHECIMENTO</span></div></footer></template>
+
+<template>
+  <footer class="app-footer">
+    <div class="topo">
+      <div class="marca">
+        <span class="nome">{{ nome }}</span>
+        <p class="descricao">{{ descricao }}</p>
+      </div>
+
+      <nav class="menu">
+        <a v-for="link in links" :key="link.id" :href="link.href" class="link">
+          {{ link.nome }}
+        </a>
+      </nav>
+    </div>
+
+    <span class="linha"></span>
+    <p class="copy">© {{ ano }} {{ nome }}. Todos os direitos reservados.</p>
+  </footer>
+</template>
+
 <style scoped>
-.app-footer{padding:28px clamp(22px,5.2vw,84px) 22px;background:#080706}.topo{display:flex;align-items:center;justify-content:space-between;gap:26px;padding-bottom:28px}.marca{display:flex;align-items:center;gap:13px;text-decoration:none}.simbolo{font-size:31px;color:#c9a96e}.nome{display:block;font-weight:400;color:#e9dfd0;font-size:22px;letter-spacing:.2em;text-transform:uppercase}.marca small{display:block;margin-top:5px;color:#9c8157;font-size:8px;letter-spacing:.23em}.frase{color:#b5a690;font-size:11px;letter-spacing:.13em;text-transform:uppercase;text-align:center}.menu{display:flex;gap:20px;flex-wrap:wrap}.link{color:#c8bba8;text-decoration:none;font-size:9px;text-transform:uppercase;letter-spacing:.13em;transition:color .2s}.link:hover{color:#c9a96e}.base{border-top:1px solid rgba(201,169,110,.2);padding-top:16px;display:flex;justify-content:space-between;gap:16px;color:#817563;font-size:9px;letter-spacing:.08em}.assinatura{color:#9b8159;letter-spacing:.15em}@media(max-width:800px){.topo{flex-wrap:wrap}.frase{order:3;width:100%;text-align:left}}@media(max-width:560px){.menu{width:100%;gap:15px}.base{flex-direction:column}.assinatura{font-size:8px}}
+.app-footer {
+  padding: 40px;
+  border-top: 1px solid #5a4a3a;
+  background: #14110f;
+}
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.nome {
+  font-size: 18px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #c9a96e;
+}
+.descricao {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-style: italic;
+  color: #d9cfc0;
+}
+.menu {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.link {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e8dfd0;
+  text-decoration: none;
+}
+.link:hover {
+  color: #c9a96e;
+}
+.linha {
+  display: block;
+  width: 24px;
+  height: 1px;
+  margin: 32px auto 16px;
+  background: #c9a96e;
+}
+.copy {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #a39684;
+}
 </style>
