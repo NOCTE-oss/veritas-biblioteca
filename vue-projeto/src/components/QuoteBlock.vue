@@ -1,7 +1,59 @@
 <script setup>
-defineProps({ frase: { type: String, default: 'O conhecimento é a única riqueza que não se esgota.' }, autor: { type: String, default: 'Sêneca' } })
+defineProps({
+  frase: {
+    type: String,
+    default: 'Não é que tenhamos pouco tempo, mas que perdemos muito dele.',
+  },
+  autor: { type: String, default: 'Sêneca' },
+})
 </script>
-<template><blockquote class="citacao"><div class="frase-wrap"><span class="aspas">“</span><p class="frase">{{ frase }}</p><footer class="rodape"><span class="linha"></span><cite class="autor">{{ autor }}</cite></footer></div></blockquote></template>
+
+<template>
+  <blockquote class="citacao">
+    <span class="aspas">“</span>
+    <p class="frase">{{ frase }}</p>
+    <footer class="rodape">
+      <span class="linha"></span>
+      <cite class="autor">{{ autor }}</cite>
+    </footer>
+  </blockquote>
+</template>
+
 <style scoped>
-.citacao{min-height:205px;margin:0;padding:36px clamp(22px,5vw,78px);display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(90deg,rgba(8,6,4,.35),rgba(8,6,4,.8) 47%,#0b0907 100%),url('https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&w=1400&q=85') center/cover;border-bottom:1px solid rgba(201,169,110,.2)}.frase-wrap{max-width:470px;position:relative;padding-left:24px}.aspas{position:absolute;left:-12px;top:-18px;color:rgba(201,169,110,.55);font-size:58px;line-height:1}.frase{margin:0 0 19px;font-size:clamp(20px,2vw,27px);font-style:italic;line-height:1.45;color:#f0e6d6}.rodape{display:flex;align-items:center;gap:12px}.linha{width:24px;height:1px;background:#c9a96e}.autor{color:#c9a96e;font-size:9px;letter-spacing:.25em;text-transform:uppercase;font-style:normal}
+.citacao {
+  max-width: 720px;
+  margin: 60px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+.aspas {
+  display: block;
+  font-size: 64px;
+  line-height: 1;
+  color: #c9a96e;
+}
+.frase {
+  margin: 0 0 24px;
+  font-size: 26px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #f0e6d6;
+}
+.rodape {
+  margin: 0;
+}
+.linha {
+  display: block;
+  width: 24px;
+  height: 1px;
+  margin: 0 auto 12px;
+  background: #c9a96e;
+}
+.autor {
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c9a96e;
+}
 </style>
