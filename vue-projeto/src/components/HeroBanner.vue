@@ -36,6 +36,8 @@ defineEmits(['click-botao'])
   background-position: center;
   background-color: #14110f;
   background-repeat: no-repeat;
+  background-color: #14110f;
+  background-image: linear-gradient(180deg, rgba(20, 17, 15, 0.22), rgba(20, 17, 15, 0.82));
   border-bottom: 1px solid #5a4a3a;
 }
 .conteudo {
