@@ -24,14 +24,14 @@ const livros = ref([
 ])
 
 const categorias = ref([
-  { id: 1, nome: 'Filosofia' },
-  { id: 2, nome: 'História' },
-  { id: 3, nome: 'Ciência' },
-  { id: 4, nome: 'Literatura' },
-  { id: 5, nome: 'Biografias' },
-  { id: 6, nome: 'Política' },
-  { id: 7, nome: 'Estratégia' },
-  { id: 8, nome: 'Desenvolvimento Pessoal' },
+  { id: 1, nome: 'Filosofia', imagem: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=500&q=85' },
+  { id: 2, nome: 'História', imagem: 'https://images.unsplash.com/photo-1461360228754-6e81c478b882?auto=format&fit=crop&w=500&q=85' },
+  { id: 3, nome: 'Ciência', imagem: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=500&q=85' },
+  { id: 4, nome: 'Literatura', imagem: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=85' },
+  { id: 5, nome: 'Biografias', imagem: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=85' },
+  { id: 6, nome: 'Política', imagem: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=500&q=85' },
+  { id: 7, nome: 'Estratégia', imagem: 'https://images.unsplash.com/photo-1586165368502-1bad197a6461?auto=format&fit=crop&w=500&q=85' },
+  { id: 8, nome: 'Desenvolvimento Pessoal', imagem: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=500&q=85' },
 ])
 
 const livrosFiltrados = computed(() => {
@@ -59,7 +59,7 @@ function selecionarCategoria(nome) {
 ```html
 <template>
   <main class="app">
-    <HeroBanner imagem="/images/biblioteca-hero.svg" />
+    <HeroBanner imagem="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000&q=90" />
 
     <h2 class="secao-titulo">Livros em destaque</h2>
 
@@ -95,6 +95,7 @@ function selecionarCategoria(nome) {
         v-for="categoria in categorias"
         :key="categoria.id"
         :nome="categoria.nome"
+        :imagem="categoria.imagem"
         :ativa="categoria.nome === categoriaSelecionada"
         @click="selecionarCategoria(categoria.nome)"
       />
