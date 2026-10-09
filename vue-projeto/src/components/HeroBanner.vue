@@ -13,7 +13,7 @@ defineEmits(['click-botao'])
 </script>
 
 <template>
-  <section class="hero" :style="imagem ? { backgroundImage: `url(${imagem})` } : {}">
+  <section class="hero" :style="imagem ? { backgroundImage: `linear-gradient(180deg, rgba(20, 17, 15, 0.28), rgba(20, 17, 15, 0.82)), url(${imagem})` } : {}">
     <div class="conteudo">
       <span class="detalhe"></span>
       <h1 class="titulo">{{ titulo }}</h1>
