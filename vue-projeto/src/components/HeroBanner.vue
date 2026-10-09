@@ -34,7 +34,8 @@ defineEmits(['click-botao'])
   text-align: center;
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(180deg, #2a221b, #14110f);
+  background-color: #14110f;
+  background-repeat: no-repeat;
   border-bottom: 1px solid #5a4a3a;
 }
 .conteudo {
