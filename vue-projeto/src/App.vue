@@ -11,16 +11,16 @@ const busca = ref('')
 const categoriaSelecionada = ref('')
 
 const livros = ref([
-  { id: 1, titulo: 'Sapiens', autor: 'Yuval Noah Harari', categoria: 'História' },
-  { id: 2, titulo: 'O Príncipe', autor: 'Nicolau Maquiavel', categoria: 'Política' },
-  { id: 3, titulo: '1984', autor: 'George Orwell', categoria: 'Literatura' },
-  { id: 4, titulo: 'A Arte da Guerra', autor: 'Sun Tzu', categoria: 'Estratégia' },
-  { id: 5, titulo: 'O Código Da Vinci', autor: 'Dan Brown', categoria: 'Literatura' },
-  { id: 6, titulo: 'Crime e Castigo', autor: 'Fiódor Dostoiévski', categoria: 'Filosofia' },
-  { id: 7, titulo: 'Uma Breve História do Tempo', autor: 'Stephen Hawking', categoria: 'Ciência' },
-  { id: 8, titulo: 'Steve Jobs', autor: 'Walter Isaacson', categoria: 'Biografias' },
-  { id: 9, titulo: 'Hábitos Atômicos', autor: 'James Clear', categoria: 'Desenvolvimento Pessoal' },
-  { id: 10, titulo: 'O Homem Mais Rico da Babilônia', autor: 'George S. Clason', categoria: 'Desenvolvimento Pessoal' },
+  { id: 1, titulo: 'Sapiens', autor: 'Yuval Noah Harari', categoria: 'História', capa: '/images/capa-sapiens.svg' },
+  { id: 2, titulo: 'O Príncipe', autor: 'Nicolau Maquiavel', categoria: 'Política', capa: '/images/capa-o-principe.svg' },
+  { id: 3, titulo: '1984', autor: 'George Orwell', categoria: 'Literatura', capa: '/images/capa-1984.svg' },
+  { id: 4, titulo: 'A Arte da Guerra', autor: 'Sun Tzu', categoria: 'Estratégia', capa: '/images/capa-arte-da-guerra.svg' },
+  { id: 5, titulo: 'O Código Da Vinci', autor: 'Dan Brown', categoria: 'Literatura', capa: '/images/capa-codigo-da-vinci.svg' },
+  { id: 6, titulo: 'Crime e Castigo', autor: 'Fiódor Dostoiévski', categoria: 'Filosofia', capa: '/images/capa-crime-e-castigo.svg' },
+  { id: 7, titulo: 'Uma Breve História do Tempo', autor: 'Stephen Hawking', categoria: 'Ciência', capa: '/images/capa-breve-historia-tempo.svg' },
+  { id: 8, titulo: 'Steve Jobs', autor: 'Walter Isaacson', categoria: 'Biografias', capa: '/images/capa-steve-jobs.svg' },
+  { id: 9, titulo: 'Hábitos Atômicos', autor: 'James Clear', categoria: 'Desenvolvimento Pessoal', capa: '/images/capa-habitos-atomicos.svg' },
+  { id: 10, titulo: 'O Homem Mais Rico da Babilônia', autor: 'George S. Clason', categoria: 'Desenvolvimento Pessoal', capa: '/images/capa-homem-mais-rico-babilonia.svg' },
 ])
 
 const categorias = ref([
@@ -59,7 +59,7 @@ function selecionarCategoria(nome) {
 ```html
 <template>
   <main class="app">
-    <HeroBanner />
+    <HeroBanner imagem="/images/biblioteca-hero.svg" />
 
     <h2 class="secao-titulo">Livros em destaque</h2>
 
@@ -80,6 +80,7 @@ function selecionarCategoria(nome) {
         :titulo="livro.titulo"
         :autor="livro.autor"
         :categoria="livro.categoria"
+        :capa="livro.capa"
       />
     </div>
 
