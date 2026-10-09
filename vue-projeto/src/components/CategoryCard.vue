@@ -1,11 +1,12 @@
 <script setup>
 defineProps ({
     nome: String,
-    imagem: String
+    imagem: String,
+    ativa: Boolean,
 })
 </script>
 <template>
-    <article class="category-card">
+    <article class="category-card" :class="{ativa: ativa}">
         <img v-if="imagem" :src="imagem" :alt="nome" class="imagem" />
         <div v-else class="imagem imagem-vazia"></div>
 
@@ -59,5 +60,9 @@ defineProps ({
 }
 .category-card:hover {
   border-color: #c9a96e;
+}
+.category-card.ativa {
+  border-color: #c9a96e;
+  box-shadow: 0 0 12px rgba(201, 169, 110, 0.5);
 }
 </style>
