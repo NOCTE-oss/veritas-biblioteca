@@ -1,34 +1,7 @@
 <script setup>
 const buscar = defineModel()
 </script>
-
-<template>
-    <div class="search-bar">
-        <input type="text" v-model="buscar" placeholder="Buscar nome do titulo ou autor do livro" class="campo" />
-    </div>
-</template>
-
+<template><div class="search-bar"><span class="icone" aria-hidden="true">⌕</span><input id="campo-busca" type="search" v-model="buscar" placeholder="Buscar por título ou autor..." class="campo" aria-label="Buscar livros por título ou autor" /><span class="atalho">ACERVO VERITAS</span></div></template>
 <style scoped>
-.search-bar {
-    margin-bottom: 32px;
-}
-
-.campo {
-    width: 100%;
-  max-width: 420px;
-  padding: 12px 16px;
-  background: #1f1a16;
-  border: 1px solid #5a4a3a;
-  color: #e8dfd0;
-  font-size: 16px;
-  font-family: Georgia, serif;
-}
-
-.campo::placeholder {
-    color: #a39684;
-}
-.campo:focus {
-    outline:none;
-    border-color: #c9a96e;
-}
+.search-bar{display:flex;align-items:center;gap:12px;width:100%;max-width:520px;margin-bottom:23px;padding:0 14px;border:1px solid rgba(201,169,110,.3);background:linear-gradient(120deg,#15110d,#0e0c0a);transition:border-color .25s,box-shadow .25s}.search-bar:focus-within{border-color:#c9a96e;box-shadow:0 0 0 3px rgba(201,169,110,.07)}.icone{color:#c9a96e;font-size:25px;line-height:1}.campo{min-width:0;width:100%;padding:14px 0;border:0;outline:0;background:transparent;color:#e9dfd0;font-size:13px}.campo::placeholder{color:#958675}.campo::-webkit-search-cancel-button{cursor:pointer}.atalho{color:#79684e;font-size:8px;letter-spacing:.12em;white-space:nowrap}@media(max-width:650px){.search-bar{max-width:none}.atalho{display:none}}
 </style>
