@@ -1,7 +1,59 @@
 <script setup>
-defineProps({ titulo: String, autor: String, categoria: String, capa: String })
+defineProps({
+  titulo: String,
+  autor: String,
+  categoria: String,
+  capa: String,
+})
 </script>
-<template><article class="book-card"><div class="capa-wrap"><img v-if="capa" :src="capa" :alt="'Capa de ' + titulo" class="capa" loading="lazy" /><div v-else class="capa capa-vazia">{{ titulo }}</div><div class="capa-sombra"></div></div><h3 class="titulo">{{ titulo }}</h3><p class="autor">{{ autor }}</p><span class="categoria">{{ categoria }}</span></article></template>
+
+<template>
+  <article class="book-card">
+    <img v-if="capa" :src="capa" :alt="titulo" class="capa" />
+    <div v-else class="capa capa-vazia">{{ titulo }}</div>
+
+    <h3 class="titulo">{{ titulo }}</h3>
+    <p class="autor">{{ autor }}</p>
+    <span class="categoria">{{ categoria }}</span>
+  </article>
+</template>
+
 <style scoped>
-.book-card{min-width:0;position:relative}.capa-wrap{position:relative;overflow:hidden;background:#17120e;border:1px solid rgba(201,169,110,.38);box-shadow:0 8px 22px rgba(0,0,0,.35);aspect-ratio:2/3}.capa{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .4s}.capa-sombra{position:absolute;inset:0;border:1px solid rgba(255,255,255,.04);pointer-events:none;box-shadow:inset 0 0 24px rgba(0,0,0,.18)}.book-card:hover .capa{transform:scale(1.045);filter:brightness(1.08)}.book-card:hover .capa-wrap{border-color:#c9a96e}.capa-vazia{display:flex;align-items:center;justify-content:center;padding:12px;text-align:center;background:linear-gradient(145deg,#292017,#100d0a);color:#c9a96e;font-size:18px}.titulo{margin:13px 0 5px;font-size:15px;font-weight:400;line-height:1.35;color:#f0e6d6}.autor{margin:0 0 10px;color:#aa9e8e;font-size:12px;line-height:1.45}.categoria{display:block;color:#c9a96e;font-size:9px;letter-spacing:.2em;text-transform:uppercase}@media(max-width:650px){.titulo{font-size:14px}.autor{font-size:11px}.categoria{font-size:8px}}
+.book-card {
+  width: 150px;
+}
+.capa {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border: 1px solid #5a4a3a;
+  display: block;
+}
+.capa-vazia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #1f1a16;
+  color: #c9a96e;
+  font-size: 18px;
+}
+.titulo {
+  margin: 12px 0 4px;
+  font-size: 16px;
+  color: #f0e6d6;
+}
+.autor {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #d9cfc0;
+}
+.categoria {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c9a96e;
+}
 </style>
