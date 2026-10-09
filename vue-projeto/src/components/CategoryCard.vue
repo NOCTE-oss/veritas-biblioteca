@@ -1,68 +1,7 @@
 <script setup>
-defineProps ({
-    nome: String,
-    imagem: String,
-    ativa: Boolean,
-})
+defineProps({ nome: String, imagem: String, ativa: Boolean })
 </script>
-<template>
-    <article class="category-card" :class="{ativa: ativa}">
-        <img v-if="imagem" :src="imagem" :alt="nome" class="imagem" />
-        <div v-else class="imagem imagem-vazia"></div>
-
-        <div class="rodape">
-            <span class="nome">{{ nome }}</span>
-            <span class="linha"></span>
-        </div>
-    </article>
-</template>
-
+<template><article class="category-card" :class="{ ativa }" tabindex="0" :aria-label="'Filtrar categoria ' + nome"><img v-if="imagem" :src="imagem" :alt="nome" class="imagem" loading="lazy" /><div v-else class="imagem imagem-vazia"></div><div class="sombra"></div><div class="rodape"><span class="nome">{{ nome }}</span><span class="linha"></span></div></article></template>
 <style scoped>
-.category-card {
-  position: relative;
-  width: 120px;
-  height: 240px;
-  border: 1px solid #5a4a3a;
-  overflow: hidden;
-  cursor: pointer;
-}
-.imagem {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.imagem-vazia {
-  background: linear-gradient(180deg, #2a221b, #14110f);
-}
-.rodape {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 14px 8px;
-  text-align: center;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-}
-.nome {
-  display: block;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #e8dfd0;
-}
-.linha {
-  display: block;
-  width: 24px;
-  height: 1px;
-  margin: 8px auto 0;
-  background: #c9a96e;
-}
-.category-card:hover {
-  border-color: #c9a96e;
-}
-.category-card.ativa {
-  border-color: #c9a96e;
-  box-shadow: 0 0 12px rgba(201, 169, 110, 0.5);
-}
+.category-card{position:relative;min-width:0;aspect-ratio:3/4.7;border:1px solid rgba(201,169,110,.35);overflow:hidden;cursor:pointer;background:#17120e;isolation:isolate;transition:border-color .3s,transform .3s,box-shadow .3s}.imagem{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s}.imagem-vazia{background:linear-gradient(180deg,#2a221b,#14110f)}.sombra{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,6,4,.03) 20%,rgba(8,6,4,.25) 48%,rgba(8,6,4,.94) 100%);z-index:1}.rodape{position:absolute;z-index:2;bottom:0;left:0;right:0;padding:15px 7px 13px;text-align:center}.nome{display:block;font-size:clamp(8px,.75vw,10px);line-height:1.45;letter-spacing:.12em;text-transform:uppercase;color:#f0e4d0;text-shadow:0 2px 8px #000}.linha{display:block;width:25px;height:1px;margin:9px auto 0;background:#c9a96e;transition:width .3s}.category-card:hover,.category-card:focus-visible,.category-card.ativa{border-color:#d9b978;box-shadow:0 8px 26px rgba(0,0,0,.35),0 0 0 1px rgba(201,169,110,.18);outline:none}.category-card:hover .imagem,.category-card:focus-visible .imagem{transform:scale(1.07);filter:brightness(1.12)}.category-card:hover .linha,.category-card.ativa .linha{width:48px}.category-card.ativa{box-shadow:0 0 0 1px #c9a96e,0 0 22px rgba(201,169,110,.15)}@media(max-width:650px){.nome{font-size:10px}}
 </style>
