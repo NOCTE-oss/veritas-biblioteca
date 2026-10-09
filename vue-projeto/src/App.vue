@@ -11,16 +11,16 @@ const busca = ref('')
 const categoriaSelecionada = ref('')
 
 const livros = ref([
-  { id: 1, titulo: 'Sapiens', autor: 'Yuval Noah Harari', categoria: 'História', capa: '/images/capa-sapiens.svg' },
-  { id: 2, titulo: 'O Príncipe', autor: 'Nicolau Maquiavel', categoria: 'Política', capa: '/images/capa-o-principe.svg' },
-  { id: 3, titulo: '1984', autor: 'George Orwell', categoria: 'Literatura', capa: '/images/capa-1984.svg' },
-  { id: 4, titulo: 'A Arte da Guerra', autor: 'Sun Tzu', categoria: 'Estratégia', capa: '/images/capa-arte-da-guerra.svg' },
-  { id: 5, titulo: 'O Código Da Vinci', autor: 'Dan Brown', categoria: 'Literatura', capa: '/images/capa-codigo-da-vinci.svg' },
-  { id: 6, titulo: 'Crime e Castigo', autor: 'Fiódor Dostoiévski', categoria: 'Filosofia', capa: '/images/capa-crime-e-castigo.svg' },
-  { id: 7, titulo: 'Uma Breve História do Tempo', autor: 'Stephen Hawking', categoria: 'Ciência', capa: '/images/capa-breve-historia-tempo.svg' },
-  { id: 8, titulo: 'Steve Jobs', autor: 'Walter Isaacson', categoria: 'Biografias', capa: '/images/capa-steve-jobs.svg' },
-  { id: 9, titulo: 'Hábitos Atômicos', autor: 'James Clear', categoria: 'Desenvolvimento Pessoal', capa: '/images/capa-habitos-atomicos.svg' },
-  { id: 10, titulo: 'O Homem Mais Rico da Babilônia', autor: 'George S. Clason', categoria: 'Desenvolvimento Pessoal', capa: '/images/capa-homem-mais-rico-babilonia.svg' },
+  { id: 1, titulo: 'Sapiens', autor: 'Yuval Noah Harari', categoria: 'História', capa: 'https://books.google.com/books/content?id=uCt-BwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
+  { id: 2, titulo: 'O Príncipe', autor: 'Nicolau Maquiavel', categoria: 'Política', capa: 'https://books.google.com/books/content?id=UDrzAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
+  { id: 3, titulo: '1984', autor: 'George Orwell', categoria: 'Literatura', capa: 'https://books.google.com/books/content?id=kotPYEqx7kMC&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
+  { id: 4, titulo: 'A Arte da Guerra', autor: 'Sun Tzu', categoria: 'Estratégia', capa: 'https://books.google.com/books/content?id=Z9a2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
+  { id: 5, titulo: 'O Código Da Vinci', autor: 'Dan Brown', categoria: 'Literatura', capa: 'https://books.google.com/books/content?id=gV1nhvItuoAC&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
+  { id: 6, titulo: 'Crime e Castigo', autor: 'Fiódor Dostoiévski', categoria: 'Filosofia', capa: 'https://books.google.com/books/content?id=OxmmBAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
+  { id: 7, titulo: 'Uma Breve História do Tempo', autor: 'Stephen Hawking', categoria: 'Ciência', capa: 'https://books.google.com/books/content?id=FrcPBgAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
+  { id: 8, titulo: 'Steve Jobs', autor: 'Walter Isaacson', categoria: 'Biografias', capa: 'https://books.google.com/books/content?id=LbuZEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
+  { id: 9, titulo: 'Hábitos Atômicos', autor: 'James Clear', categoria: 'Desenvolvimento Pessoal', capa: 'https://books.google.com/books/content?id=vGH7zwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
+  { id: 10, titulo: 'O Homem Mais Rico da Babilônia', autor: 'George S. Clason', categoria: 'Desenvolvimento Pessoal', capa: 'https://books.google.com/books/content?id=eUxWEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
 ])
 
 const categorias = ref([
