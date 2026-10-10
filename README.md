@@ -21,6 +21,14 @@ busca que filtra os livros em tempo real, incluindo filtro por categoria.
 
 ## Estrutura de pastas
 
+## Como rodar o projeto
+
+```sh
+cd vue-projeto
+npm install
+npm run dev
+```
+
 ## Uso de Inteligência Artificial
 
 A equipe utilizou IA (Claude e ChatGPT) como ferramenta de apoio durante o desenvolvimento,
