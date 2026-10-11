@@ -20,7 +20,7 @@ busca que filtra os livros em tempo real, incluindo filtro por categoria.
 - Eventos (`@click`) para busca e filtro por categoria
 
 ## Estrutura de pastas
-
+```sh
 vue-projeto/
 └── src/
 ├── App.vue
@@ -32,6 +32,7 @@ vue-projeto/
 ├── HeroBanner.vue
 ├── QuoteBlock.vue
 └── SearchBar.vue
+```
 
 ## Como rodar o projeto
 
