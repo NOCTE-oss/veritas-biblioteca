@@ -21,6 +21,18 @@ busca que filtra os livros em tempo real, incluindo filtro por categoria.
 
 ## Estrutura de pastas
 
+vue-projeto/
+└── src/
+├── App.vue
+├── main.js
+└── components/
+├── AppFooter.vue
+├── BookCard.vue
+├── CategoryCard.vue
+├── HeroBanner.vue
+├── QuoteBlock.vue
+└── SearchBar.vue
+
 ## Como rodar o projeto
 
 ```sh
