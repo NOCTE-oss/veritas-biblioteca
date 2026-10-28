@@ -1,95 +1,58 @@
-# Veritas - Biblioteca Virtual
+## Evolução do projeto: Tailwind CSS (2ª avaliação)
 
-Aplicação One Page desenvolvida em Vue.js como trabalho da disciplina de Front-End.
-O projeto apresenta uma biblioteca virtual com livros em destaque, categorias e uma
-busca que filtra os livros em tempo real, incluindo filtro por categoria.
+Nesta etapa, o projeto da 1ª avaliação foi evoluído com o framework CSS
+**Tailwind CSS**, mantendo a proposta, a componentização e a reatividade em Vue.js.
 
-## Tecnologias
+### Como o Tailwind foi integrado
 
-- Vue.js (Composition API com `<script setup>`)
-- Vite
-- CSS próprio (sem frameworks externos)
+- Instalação: `npm install -D tailwindcss @tailwindcss/vite`
+- Plugin `tailwindcss()` adicionado à lista de `plugins` no `vite.config.js`
+- Arquivo `src/style.css` com `@import "tailwindcss";`, importado no `main.js`
 
-## Conceitos de Vue aplicados
+### Elementos visuais melhorados
 
-- Componentização em arquivos `.vue` (BookCard, CategoryCard, SearchBar, HeroBanner, AppFooter, QuoteBlock)
-- Reúso de componentes com `v-for` (BookCard usado para vários livros, CategoryCard para várias categorias)
-- Props para passagem de dados aos componentes
-- Reatividade com `ref()` e `computed()`
-- Diretivas `v-if`, `v-else`, `v-for` e `v-model`
-- Eventos (`@click`) para busca e filtro por categoria
+1. **DestaqueHero (novo):** seção hero nova, com título grande, botão, estatísticas
+   e dois livros "flutuando" nas laterais (reaproveitando o componente BookCard).
+2. **HeroBanner:** CSS próprio convertido para classes do Tailwind, com título
+   que se ajusta ao tamanho da tela.
+3. **BookCard:** efeito de elevação ao passar o mouse e tamanho responsivo.
 
-## Estrutura de pastas
-```sh
-vue-projeto/
-└── src/
-├── App.vue
-├── main.js
-└── components/
-├── AppFooter.vue
-├── BookCard.vue
-├── CategoryCard.vue
-├── HeroBanner.vue
-├── QuoteBlock.vue
-└── SearchBar.vue
-```
+### Classes e recursos do Tailwind utilizados
 
-## Como rodar o projeto
+| Classe                                         | O que faz                                            |
+| ---------------------------------------------- | ---------------------------------------------------- |
+| `flex items-center justify-center`             | Centraliza o conteúdo nos dois eixos                 |
+| `px-6 py-24`                                   | Espaçamento interno horizontal e vertical            |
+| `text-3xl md:text-5xl`                         | Tamanho do texto que cresce em telas maiores         |
+| `hidden md:block`                              | Esconde no celular e mostra a partir de telas médias |
+| `bg-[#14110f]`                                 | Cor de fundo exata (valor personalizado)             |
+| `hover:-translate-y-2 transition duration-300` | Card sobe suavemente ao passar o mouse               |
+| `-rotate-6` / `rotate-6`                       | Inclina os livros da hero                            |
+| `absolute inset-0`                             | Posiciona um elemento cobrindo toda a seção          |
+| `tracking-widest`                              | Aumenta o espaço entre as letras                     |
+| `w-36 sm:w-40 lg:w-44`                         | Largura que muda conforme o tamanho da tela          |
 
-```sh
-cd vue-projeto
-npm install
-npm run dev
-```
+### Responsividade
 
-## Uso de Inteligência Artificial
+O Tailwind usa a abordagem _mobile first_: classes sem prefixo valem para todas as
+telas, e prefixos como `sm:`, `md:` e `lg:` aplicam estilos a partir de determinados
+tamanhos. Assim, os livros laterais da hero somem no celular e os textos se ajustam.
 
-A equipe utilizou IA (Claude e ChatGPT) como ferramenta de apoio durante o desenvolvimento,
-sempre revisando e testando o código gerado antes de utilizá-lo. Abaixo estão os principais
-prompts utilizados, organizados por etapa:
+### Prompts utilizados nesta etapa
 
-### Etapa: planejamento e divisão de componentes
-"Tenho uma aplicação Vue sobre uma biblioteca virtual. Sugira uma divisão em componentes
-simples e reutilizáveis. Utilize apenas Vue com `<script setup>`, sem bibliotecas externas
-e sem Vue Router."
+**Etapa: criação da nova hero section**
+"Crie uma seção hero em Vue com Tailwind CSS, com título grande, texto curto, botão,
+estatísticas e livros flutuando nas laterais, no estilo escuro (preto e dourado) do
+projeto. Reaproveite o componente BookCard e explique cada classe."
 
-### Etapa: criação do componente BookCard
-"Crie um componente Vue simples (BookCard) que receba título, autor, categoria e capa
-através de props. Utilize `<script setup>` e CSS próprio, sem bibliotecas externas."
+**Etapa: migração do HeroBanner para Tailwind**
+"Converta este componente Vue com CSS próprio para classes do Tailwind CSS, mantendo
+props e eventos, e explique cada classe."
 
-### Etapa: criação do componente CategoryCard e reúso
-"Como posso reutilizar este componente para apresentar diferentes categorias usando props
-e v-for?"
+**Etapa: melhoria do BookCard**
+"Converta o BookCard para Tailwind, adicionando efeito hover de elevação e tamanho
+responsivo com sm: e lg:."
 
-### Etapa: busca com v-model
-"Como utilizar v-model em um campo de busca no Vue para filtrar uma lista de livros com
-v-for? Utilize apenas `<script setup>`, sem bibliotecas externas."
-
-### Etapa: filtro por categoria (interatividade entre componentes)
-"Como filtrar uma lista de livros ao clicar em um componente de categoria em Vue, usando
-ref, @click e v-for, combinando esse filtro com uma busca já existente? Utilize apenas
-`<script setup>`, sem bibliotecas externas e sem conceitos avançados de Vue."
-
-### Etapa: revisão do código
-"Revise este código utilizando somente os conceitos básicos de Vue: componentes, props,
-ref, eventos, v-if, v-for e v-model. Não utilize bibliotecas externas nem conceitos
-avançados."
-
-### Etapa: criação do Header
-"Crie um componente Header para uma biblioteca virtual em Vue, com navegação simples e visual consistente com o restante do site. Utilize `<script setup>` e CSS próprio, sem bibliotecas externas."
-
-### Etapa: criação do Hero
-"Crie um componente HeroBanner para a página inicial de uma biblioteca virtual, com título, texto de apresentação e imagem de destaque. Utilize Vue com `<script setup>`, props quando necessário e CSS próprio."
-
-### Etapa: criação da citação
-"Crie um componente QuoteBlock para exibir uma citação literária em destaque na página da biblioteca virtual. Utilize `<script setup>` e CSS próprio, sem bibliotecas externas."
-
-### Etapa: criação do Footer
-"Crie um componente AppFooter para o rodapé da biblioteca virtual, com informações finais e estilo consistente com a página. Utilize Vue com `<script setup>` e CSS próprio, sem bibliotecas externas."
-
-## Equipe
-
-- Enzo do espírito santo ferreira - 04206344
-- João Gabriel da Silva Fagundes - 04213412
-- David Ribeiro Machado - 04209505
-- Danniel Yan - 04214061
+**Etapa: correção de problemas na integração**
+"O Tailwind não está aplicando estilos nos componentes. Revise meu vite.config.js
+e main.js."
