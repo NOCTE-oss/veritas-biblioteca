@@ -13,69 +13,30 @@ defineEmits(['click-botao'])
 </script>
 
 <template>
-  <section class="hero" :style="imagem ? { backgroundImage: `url(${imagem})` } : {}">
-    <div class="conteudo">
-      <span class="detalhe"></span>
-      <h1 class="titulo">{{ titulo }}</h1>
-      <p class="subtitulo">{{ subtitulo }}</p>
-      <button class="botao" @click="$emit('click-botao')">{{ botao }}</button>
+  <section
+    class="relative flex min-h-[380px] items-center justify-center border-b border-[#5a4a3a] bg-[#14110f] bg-cover bg-center bg-no-repeat px-6 py-16 text-center md:px-10"
+    :style="imagem ? { backgroundImage: `url(${imagem})` } : {}"
+  >
+    <!-- Camada escura por cima da imagem (era o linear-gradient) -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#14110f]/20 to-[#14110f]/80"></div>
+
+    <div class="relative z-10 max-w-2xl">
+      <span class="mx-auto mb-6 block h-px w-10 bg-[#c9a96e]"></span>
+
+      <h1 class="mb-4 text-3xl font-normal leading-tight text-[#f0e6d6] md:text-5xl">
+        {{ titulo }}
+      </h1>
+
+      <p class="mb-8 text-base italic text-[#d9cfc0] md:text-lg">
+        {{ subtitulo }}
+      </p>
+
+      <button
+        class="cursor-pointer border border-[#c9a96e] px-7 py-3 font-serif text-xs uppercase tracking-[3px] text-[#c9a96e] transition hover:bg-[#c9a96e] hover:text-[#14110f]"
+        @click="$emit('click-botao')"
+      >
+        {{ botao }}
+      </button>
     </div>
   </section>
 </template>
-
-<style scoped>
-.hero {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 380px;
-  padding: 60px 40px;
-  text-align: center;
-  background-size: cover;
-  background-position: center;
-  background-color: #14110f;
-  background-repeat: no-repeat;
-  background-color: #14110f;
-  background-image: linear-gradient(180deg, rgba(20, 17, 15, 0.22), rgba(20, 17, 15, 0.82));
-  border-bottom: 1px solid #5a4a3a;
-}
-.conteudo {
-  max-width: 640px;
-}
-.detalhe {
-  display: block;
-  width: 40px;
-  height: 1px;
-  margin: 0 auto 24px;
-  background: #c9a96e;
-}
-.titulo {
-  margin: 0 0 16px;
-  font-size: 40px;
-  font-weight: normal;
-  line-height: 1.2;
-  color: #f0e6d6;
-}
-.subtitulo {
-  margin: 0 0 32px;
-  font-size: 18px;
-  font-style: italic;
-  color: #d9cfc0;
-}
-.botao {
-  padding: 12px 28px;
-  background: transparent;
-  border: 1px solid #c9a96e;
-  color: #c9a96e;
-  font-family: Georgia, serif;
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.botao:hover {
-  background: #c9a96e;
-  color: #14110f;
-}
-</style>
