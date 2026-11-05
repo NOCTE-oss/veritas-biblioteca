@@ -8,25 +8,32 @@ defineProps({
 </script>
 
 <template>
-  <article
-    class="w-36 cursor-pointer transition duration-300 hover:-translate-y-2 sm:w-40 lg:w-44"
-  >
-    <img
-      v-if="capa"
-      :src="capa"
-      :alt="titulo"
-      class="block h-52 w-full border border-[#5a4a3a] object-cover transition duration-300 hover:border-[#c9a96e] sm:h-56"
-    />
+  <article class="group w-36 cursor-pointer sm:w-40 lg:w-44">
     <div
-      v-else
-      class="box-border flex h-52 w-full items-center justify-center border border-[#5a4a3a] bg-[#1f1a16] p-3 text-center text-lg text-[#c9a96e] transition duration-300 hover:border-[#c9a96e] sm:h-56"
+      class="relative aspect-[2/3] w-full overflow-hidden bg-couro shadow-[0_18px_30px_-18px_rgb(0_0_0/0.9)] ring-1 ring-fio transition duration-500 group-hover:-translate-y-2 group-hover:ring-ouro"
     >
-      {{ titulo }}
+      <img
+        v-if="capa"
+        :src="capa"
+        :alt="'Capa de ' + titulo"
+        class="h-full w-full object-cover"
+      />
+
+      <!-- Sem foto: capa tipográfica com moldura dourada -->
+      <div
+        v-else
+        class="flex h-full items-center justify-center p-5 text-center text-xl leading-tight text-ouro-claro"
+      >
+        <span class="pointer-events-none absolute inset-2 border border-ouro/30"></span>
+        {{ titulo }}
+      </div>
     </div>
 
-    <h3 class="mb-1 mt-3 text-base text-[#f0e6d6]">{{ titulo }}</h3>
-    <p class="mb-2 text-sm text-[#d9cfc0]">{{ autor }}</p>
-    <span class="text-xs uppercase tracking-[2px] text-[#c9a96e]">
+    <h3 class="mt-4 text-lg font-medium leading-snug text-pergaminho">{{ titulo }}</h3>
+    <p class="text-base italic text-cinza-quente">{{ autor }}</p>
+    <span
+      class="mt-2 block font-label text-[0.65rem] uppercase tracking-[0.3em] text-ouro"
+    >
       {{ categoria }}
     </span>
   </article>

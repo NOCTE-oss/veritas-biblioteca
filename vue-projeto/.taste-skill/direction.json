@@ -1,0 +1,386 @@
+{
+ "version": 1,
+ "at": "2026-11-05T00:25:28.988Z",
+ "seed": 1571709574,
+ "redraws": 1,
+ "input": {
+  "brief": "Veritas Biblioteca: uma estante pública de dez clássicos em português que leitores podem abrir, buscar e explorar por oito categorias",
+  "sector": "culture",
+  "tone": null,
+  "have": [],
+  "keep": [
+   "palette",
+   "type"
+  ],
+  "avoid": [],
+  "sections": [
+   "list"
+  ],
+  "direction": "dense-tiles"
+ },
+ "imagery": "atmosphere",
+ "allow": [],
+ "direction": {
+  "id": "dense-tiles",
+  "name": "The well-kept board",
+  "sectors": [
+   "agency",
+   "studio-portfolio",
+   "saas",
+   "dev-tool",
+   "ai-product",
+   "culture",
+   "music",
+   "other"
+  ],
+  "tones": [
+   "technical",
+   "bold"
+  ],
+  "needs": [],
+  "idea": "The whole page is a board of tiles fitted edge to edge with narrow gaps, like a tidy desk seen from above. Each tile is one thing: the name, a statement, a photograph, a number, a link, a short list. There is no hero and no sequence of bands; the page is one continuous composition that the eye roams. It suits subjects with many small true things to show (a studio with work, writing, clients and news; a product with several distinct capabilities) and it replaces the generic bento by having real content in every tile and a strict system for sizes.",
+  "composition": "A 12-column grid with 8px gaps and 8–12px outer margins, filled completely, no empty cells. Tiles use only four sizes (for example 6×4, 6×2, 3×2, 3×4 in column × row units of about 90px). Every tile is a flat filled rectangle: ground colour one step from the page, or a palette colour, or a photograph covering it. One radius everywhere (0, or 6–10px). The first screen contains: a name tile (the name at display size, the largest type on the page) with the wordmark set large, a statement tile with the description at 28–40px, two or three image tiles and one action tile in the accent colour. Text inside tiles is top-left aligned with 20–24px padding and never centred. Below the first screen the board continues with the same sizes; the last row is the footer made of tiles.",
+  "typography": "One grotesk in two weights. Inside tiles: a large size for single statements, a small size for lists. No uppercase labels in tile corners.",
+  "typeClasses": [
+   "grotesk-tight",
+   "geometric"
+  ],
+  "colour": "Page ground, tile ground one step lighter or darker, and one or two palette colours on selected tiles. Photographs supply the rest.",
+  "paletteTags": [
+   "dark-neutral",
+   "light-neutral",
+   "mono-accent"
+  ],
+  "imagery": "Photographs fill whole tiles with `object-fit: cover`; choose images that crop well to both wide and tall tiles.",
+  "sectionTags": [
+   "dense",
+   "colour-field",
+   "photo-led"
+  ],
+  "motion": "stillness",
+  "richness": "The fit. A full board with consistent gaps and varied tile contents is satisfying in the way a packed suitcase is.",
+  "pitfalls": "Tiles are filled, never outlined, and never carry shadows. Do not put an icon and a two-line feature blurb in every tile; vary what tiles hold. Decide the phone layout as its own board: two columns, tiles re-ordered so the name and statement lead.",
+  "seenIn": [
+   "aww-oimachi",
+   "aww-aspen-search",
+   "aww-realevate",
+   "opl-justin-lerner"
+  ],
+  "allow": []
+ },
+ "hero": {
+  "id": "two-by-two-board",
+  "name": "Two-by-two board",
+  "archetype": "tiles",
+  "directions": [
+   "dense-tiles",
+   "editorial-report"
+  ],
+  "needs": [],
+  "blueprint": "A board with 8px outer margins and 8px gaps throughout; every tile is a filled rectangle with one shared radius (0 or 8px). A 60px top row is itself made of tiles: a square ink tile with the logo mark, a wide ground-tone tile holding four text links that begin at the centre line, and an ink tile at the right end holding the single action. Below it the rest of the viewport is a two-by-two grid. Top-left: a paper tile with the name, or its first word, at clamp(96px, 12.5vw, 190px), medium weight, tracking -0.05em, sitting bottom-left on 24px padding. Top-right and bottom-left: photographs covering their tiles (object-fit: cover), both greyscale so they read as one picture continued across the board. Bottom-right is divided into two tiles side by side: a dark tile with one sentence at 24px, top-left aligned, and a tile in the accent colour with a second short statement at 24px, also top-left. Text never centres inside a tile. No tile is empty and none is outlined.",
+  "mobile": "The board becomes one column of tiles with 6px gaps: a top row with the logo tile and a menu tile; the name tile at 30% of the screen height with the name at 22vw bottom-left; one photograph tile at 4:3; then the dark tile and the accent tile side by side as two squares. The second photograph moves below the first screen.",
+  "headline": "The name, or its first word, up to 8 characters at 12.5vw; the two 24px statements are one sentence each.",
+  "motion": "shutter-image",
+  "seenIn": [
+   "aww-aspen-search"
+  ]
+ },
+ "type": null,
+ "palette": null,
+ "photos": {
+  "set": "fog-and-quiet",
+  "title": "Fog and quiet",
+  "note": "misty, muted, minimal landscapes and empty horizons; calm areas for text",
+  "treatment": null,
+  "others": [
+   "sky-and-space",
+   "architecture",
+   "city-day",
+   "city-night"
+  ],
+  "photos": [
+   {
+    "id": 552,
+    "alt": "Tiny sailboat on a calm sea with distant hills, black and white",
+    "tone": "mid",
+    "colours": [
+     "grey",
+     "white",
+     "black"
+    ],
+    "mono": true,
+    "calm": "all",
+    "quality": 5,
+    "ratio": 1.5,
+    "by": "Hugo Kerr",
+    "page": "https://unsplash.com/photos/Ke96snCJ1m0"
+   },
+   {
+    "id": 594,
+    "alt": "Small boathouse at the end of a jetty on dark water at night",
+    "tone": "dark",
+    "colours": [
+     "black",
+     "deep purple",
+     "warm white"
+    ],
+    "mono": false,
+    "calm": "top",
+    "quality": 5,
+    "ratio": 1.5,
+    "by": "Aurélien bellanger",
+    "page": "https://unsplash.com/photos/uoSEDUu8F-I"
+   },
+   {
+    "id": 266,
+    "alt": "Three ships on a distant horizon across a calm blue sea",
+    "tone": "mid",
+    "colours": [
+     "pale blue",
+     "deep blue"
+    ],
+    "mono": false,
+    "calm": "all",
+    "quality": 5,
+    "ratio": 1.78,
+    "by": "John Maravelakis",
+    "page": "https://unsplash.com/photos/Vosp2wlY3Bs"
+   },
+   {
+    "id": 634,
+    "alt": "Pine forest dissolving into fog beneath a pale pink sky",
+    "tone": "mid",
+    "colours": [
+     "dark green",
+     "pale pink",
+     "white"
+    ],
+    "mono": false,
+    "calm": "top",
+    "quality": 5,
+    "ratio": 1.5,
+    "by": "Jay Mantri",
+    "page": "https://unsplash.com/photos/TFyi0QOx08c"
+   },
+   {
+    "id": 510,
+    "alt": "Small red-roofed church below a mountain under a blank white sky",
+    "tone": "light",
+    "colours": [
+     "white",
+     "olive brown",
+     "grey"
+    ],
+    "mono": false,
+    "calm": "top",
+    "quality": 5,
+    "ratio": 1.33,
+    "by": "Jeff Sheldon",
+    "page": "https://unsplash.com/photos/4IPe3tnBKK0"
+   },
+   {
+    "id": 842,
+    "alt": "Wooden steps with railings descending into pale pink fog",
+    "tone": "light",
+    "colours": [
+     "blush pink",
+     "pale grey",
+     "slate"
+    ],
+    "mono": false,
+    "calm": "top",
+    "quality": 5,
+    "ratio": 0.75,
+    "by": "Joe Beck",
+    "page": "https://unsplash.com/photos/NbUokuw0BQI"
+   },
+   {
+    "id": 172,
+    "alt": "Stone jetty stretching into still water and dense grey fog",
+    "tone": "mid",
+    "colours": [
+     "grey",
+     "warm grey"
+    ],
+    "mono": false,
+    "calm": "top",
+    "quality": 5,
+    "ratio": 1.51,
+    "by": "Aleksi Tappura",
+    "page": "https://unsplash.com/photos/TQeX8khR54I"
+   },
+   {
+    "id": 228,
+    "alt": "Single round hay bale in a field under dense fog",
+    "tone": "mid",
+    "colours": [
+     "grey green",
+     "golden tan"
+    ],
+    "mono": false,
+    "calm": "top",
+    "quality": 5,
+    "ratio": 1.33,
+    "by": "Michal Kubicek",
+    "page": "https://unsplash.com/photos/0AbVUUorULU"
+   }
+  ]
+ },
+ "motion": {
+  "id": "shutter-image",
+  "name": "Shutter image",
+  "description": "The one hero or showcase image opens from an edge with a clip-path over about 1.1 seconds while the picture inside settles from 1.12 scale to rest. Use it once, on the image that matters most; later images simply are there. Recipe: 'Image shutter' in references/motion.md."
+ },
+ "sections": [
+  {
+   "id": "list-sticky-photo-active-list",
+   "role": "list",
+   "name": "Sticky photograph, active list",
+   "shape": "split",
+   "tags": [
+    "photo-led",
+    "type-led",
+    "object-led"
+   ],
+   "directions": [
+    "hero-object",
+    "split-stage",
+    "place-carries-it",
+    "dark-room",
+    "pinned-poster"
+   ],
+   "needs": [],
+   "blueprint": "Two columns. The left, columns 1–5, is `position: sticky; top: 12vh` and holds one photograph or object at 4:5, 34vw wide, unframed on the ground. The right, columns 7–11, holds a vertical list of five to nine names (treatments, rooms, courses, services) at clamp(20px, 1.6vw, 24px), each row 58px tall with the name at the left and a price or duration right-aligned at 15px in the soft ink. The active row is full ink; the others rest at 40% opacity. Hovering, focusing or scrolling a row to the middle of the viewport makes it active, crossfades the left photograph to that item's image over 300ms, and opens a three-line description at 15px, 34ch wide, directly under the name, pushing later rows down. A heading of two or three words at clamp(32px, 3.4vw, 48px) sits above the list, aligned to its left edge, 48px above the first row.",
+   "mobile": "The photograph becomes a 4:3 band pinned to the top of the screen at 38svh while the list scrolls beneath it; the heading sits above the first row. Rows are 56px tall and the description opens on tap. The image changes with the row nearest the band.",
+   "seenIn": [
+    "opl-neuropelvic-surgery",
+    "opl-humanoid-index"
+   ]
+  }
+ ],
+ "references": [
+  {
+   "id": "aww-realevate",
+   "name": "Realevate",
+   "url": "https://realevate.agency/",
+   "source": "Awwwards Site of the Day",
+   "kind": "real-estate",
+   "score": 7.2,
+   "idea": "The site is a board you zoom out of: the home screen with its slogan marquee becomes one tile beneath four tall colour-coded category cards.",
+   "mood": [
+    "crisp",
+    "corporate",
+    "confident",
+    "bright"
+   ],
+   "archetype": "other: marquee-behind-centred-image",
+   "hero": "White field, all type navy. Top row about 8% down: one link far left, an extended-caps wordmark centred, one link far right. Across the vertical middle a two-word slogan repeats as a marquee at about 15vw in medium weight, cropped by both edges; a square photograph about 19vw wide sits dead centre on top of it, hiding the letters behind. Lower third: a two-line centred subhead near 24px and, beneath it, a thin-outlined rectangular tag in tiny extended capitals. Bottom-left a copyright line; bottom-right an outlined rectangular button beside a solid navy square menu button.",
+   "type": "Google Sans medium at 218px with -0.02em tracking for the marquee and roughly 16-24px for interface text. Monument Extended in small spaced capitals for the wordmark and price tag. Card titles are rotated 90 degrees and read bottom to top.",
+   "colour": "#ffffff #1e2a5e #e1e2ea #3a664f #2c1a2e #1c1b1e — Navy on white with no other interface colour in the hero. The overview sits on pale lavender-grey and gives each category a flat card colour: navy, forest green, aubergine, near-black.",
+   "imagery": "Glossy architectural renders of sea-view terraces, resorts and towers. One perfect square in the hero; landscape crops fill the bottom third of each category card. Square corners, full saturation, no grade.",
+   "layout": "A one-screen site with two states. Home is symmetrical: corners hold small utilities, the centre holds marquee and image. The overview is a four-column row of tall cards with equal gutters and a scaled-down live copy of the home screen centred beneath.",
+   "sections": [
+    {
+     "role": "work",
+     "description": "Pale lavender-grey ground with four equal portrait cards in a row, roughly 1:2 in proportion, about 20px apart with generous outer margins. Each card is a flat colour block for its top 70% and a photograph for the bottom 30%. A small monogram sits top-left; the category name runs vertically up the right side in white at about 28px; a two-line descriptor in tiny white text sits bottom-left of the colour block, just above the image."
+    },
+    {
+     "role": "other",
+     "description": "Centred below the card row, spanning the middle two columns, sits a miniature of the home screen: a white rectangle with the tiny nav row, the slogan marquee still running and the square photo in the middle, cropped by the viewport's bottom edge. It acts as a live thumbnail of where the visitor came from and a way back."
+    }
+   ],
+   "steal": [
+    "Run a giant slogan marquee through the middle of the viewport and park a square image on top so the words are read as they pass around the picture.",
+    "Build category cards as a tall colour block over a short photo, with the title rotated up the right edge.",
+    "Keep utilities in the four corners (two links top, copyright bottom-left, action pair bottom-right) and leave the sides empty."
+   ],
+   "media": "A white screen led by type: a single centred 272px square photograph covers about 9% of the viewport and works as a window laid over a running marquee line, the words passing behind it. The preloader cycles property photographs through the same square so the load hands off without a cut; in the selection state, photographs fill the bottom 30% of four tall colour-block cards; five images in the home state, no video.",
+   "motion": "About 2.2s of preloader: a navy screen with the square flipping through photographs and a counter climbing, then the ground turns white around the square and the details arrive last in a stagger. There is no document scroll: the first wheel step shrinks the home screen to about 44% below the four category cards, and the slogan marquee loops every 14.06s at about 43px/s; cards transition transform and filter over 0.8s cubic-bezier(.18,.13,0,.99), buttons wipe their fill over 0.75s, and there are 5 reduced-motion rules."
+  },
+  {
+   "id": "aww-aspen-search",
+   "name": "Aspen Search",
+   "url": "https://www.aspensearch.com/",
+   "source": "Awwwards Site of the Day",
+   "kind": "other",
+   "score": 8.2,
+   "idea": "The page is a ruled tile system with no margins: the two-word name is split across cells that alternate type, dithered canvas, black and one mint green.",
+   "mood": [
+    "brutalist",
+    "precise",
+    "technical",
+    "stark",
+    "confident"
+   ],
+   "archetype": "giant-wordmark",
+   "hero": "A 60px top bar ruled into cells: black logo square, local time, nav links starting at the centre line, a theme toggle and a black contact cell flush right. Below, the viewport is a two-by-two grid divided by 1px black lines, no outer margin. Top-left is white with the first word of the name at 12.5vw, weight 450, sitting bottom-left. Top-right and bottom-left cells hold a black-and-white dithered canvas crossed by large pale-grey blade shapes that ignore cell borders. The bottom-right quadrant splits into a black cell (24px white summary, mono caps action row at its base) and a mint cell (second statement, client-logo marquee along the bottom).",
+   "type": "Suisse Intl at weight 450 for everything, tracking about -0.02em; Suisse Intl Mono in small caps for actions, bullet lists and footer. Wordmark 180px against 24px statements and 16px body. Later headings switch to all caps at about 9vw with leading near 0.9.",
+   "colour": "#ffffff #232323 #d9d9d9 #a1ffcb #969797 — White, near-black and two greys fill the cells; a single mint green floods whole tiles (a statement, a stat, the closing call to action) as the only colour. Cool and flat.",
+   "imagery": "A canvas of 1-bit ordered-dither dots with soft tonal blobs, overlaid with flat pale-grey shards taken from the logo; services get white wireframe line drawings of spheres. No photography anywhere.",
+   "layout": "Zero page margin: everything is edge-to-edge cells on a two-column grid with halves subdivided, separated by 1px rules. Sections differ only by cell fill and cell height. Type always sits top-left or bottom-left in its cell with about 20px padding; some cells are left deliberately empty.",
+   "sections": [
+    {
+     "role": "intro",
+     "description": "The second screen continues the hero grid: a black cell carries a two-line all-caps slogan at about 9vw set hard against its left edge; a light grey cell top-right holds the second word of the name at the same giant size as the first, bottom-aligned; dither canvas fills the rest. Then a white row where the left half is empty and a 24px long-form text runs only in the right column."
+    },
+    {
+     "role": "stats",
+     "description": "Stair-stepped tiles instead of a row. A tall mint cell fills the left half with one figure at about 5vw in its top-left corner and nothing else. On the right, a shorter black tile starts higher with a white figure top-left and a small caption at its bottom edge; a grey tile sits to its right, stepped down, same internal layout. The tiles' unequal heights leave white notches."
+    },
+    {
+     "role": "features",
+     "description": "Left half: a light grey cell with a three-line all-caps heading whose middle line is pushed to the right edge, a small paragraph low in the cell and a black mono-caps button bottom-right. Right half: black, split by hairlines into stacked rows; each row has a tiny mono index, a 28px title, a short paragraph in a second column, a white wireframe drawing and a mono caps list with small mint square bullets."
+    },
+    {
+     "role": "footer",
+     "description": "A grid of cells: white cell with a short statement top-left; a cell with a plain nav list; a cell with two small analogue clock icons and city times; a hairline row with email left and a social link right. Below, a black cell with the logo and lowercase wordmark centred large, beside a mint cell with a heading top-left and a thin diagonal arrow drawn into its bottom-right corner."
+    }
+   ],
+   "steal": [
+    "Rule the whole viewport into cells with 1px lines and no page margin, then give the nav, the headline, the summary and the proof each its own cell with a flat fill.",
+    "Split a two-word brand name across two cells on consecutive screens at the same giant size, so scrolling completes the name.",
+    "Use a 1-bit ordered-dither texture as the picture in otherwise empty cells and let large flat logo fragments cross the cell borders to tie the grid together."
+   ],
+   "media": "One halftone canvas of the brand mark is seen only through chosen cells of the tile grid, about half the hero area, and returns in sticky half panels and as a full-bleed canvas behind knockout words. Portraits are high-key black and white in a staggered row with offset heights, client logos keep their brand colours inside their own tiles, and there is no video and no rounded corner anywhere.",
+   "motion": "A dark screen gives way at about 1.2s to a small mark on a 20s coin spin, the white grid arrives by 2.5s with the name rising through a mask, and the dither resolves by 4.5s. Lenis drives CSS sticky stacking (12 sticky elements, no pins): hero rows slide over each other and stat tiles lock under the header one by one; text fades in by line over 1000ms cubic-bezier(0.23,1,0.32,1) in 100ms steps (193 WAAPI calls), and a theme toggle wipes the page with a 1.2s clip-path sweep."
+  },
+  {
+   "id": "opl-city-of-angels",
+   "name": "City of Angels",
+   "url": "https://cityxofxangels.com",
+   "source": "One Page Love",
+   "kind": "culture",
+   "score": 7.6,
+   "idea": "A fixed poster: the book title stays pinned across the viewport while portraits and press quotes swap underneath it, so every scroll step is a new cover.",
+   "mood": [
+    "bold",
+    "sunny",
+    "street",
+    "editorial",
+    "direct"
+   ],
+   "archetype": "giant-wordmark",
+   "hero": "Pale icy-blue page. The title runs as one line of extra-bold uppercase grotesk at 10vw, centred, spanning about 82% of the width in saturated cyan, 120px from the top. A single portrait photograph, 37% of the viewport wide and nearly full height, is centred beneath; the title crosses over its upper quarter, so the middle letters sit on the image. The author name sits top-centre in small bold caps, a two-bar menu icon top-right. Bottom-left, a 13-line bold paragraph in a narrow 340px column; bottom-right, a solid black five-point star about 70px wide.",
+   "type": "ABC Diatype throughout: weight 800 uppercase for the 144px title, bold copy around 20-24px with leading near 1.0; Founders Grotesk Mono in tiny caps for quote attributions. Two sizes plus a label. The final frame catches title letters slanting to oblique.",
+   "colour": "#e4f8fd #06aeef #0a0a0a #c8b59d — The page colour is a pale tint of the title's cyan; cyan appears only on the title, the opening words and quotation marks. Text and star are black. The digest records one solid cyan section.",
+   "imagery": "Full-length street-style portraits, all vertical at about 2:3, saturated natural light, subject standing centre. One image at a time, square corners, centred on the page with the title overprinting it.",
+   "layout": "One pinned composition repeated for seven screens: central image column, fixed title, and a single text block that alternates between the left and right gutters and shifts height each step. Margins about 46px; nothing else on screen.",
+   "sections": [
+    {
+     "role": "proof",
+     "description": "Each scroll step keeps the pinned title and swaps the central portrait. One press quote sits in a column 180-340px wide in an outer gutter, alternating right, left, right, and placed at a different height each time (upper, middle, lower). Quotes are bold black with tight leading and cyan quotation marks; the source follows in tiny underlined or mono caps. The black star stays bottom-right and is caught at different rotation angles."
+    },
+    {
+     "role": "list",
+     "description": "Not captured in the shots, but the digest records four stacked, centred, uppercase links at 144px (10vw) in the same extra-bold grotesk, plus a solid cyan section: navigation reuses the title's exact type size, one link per line, so the menu is another poster rather than a small list."
+    }
+   ],
+   "steal": [
+    "Pin one giant title across the viewport and let a single centred image change beneath it, with the type overprinting the photo's top quarter.",
+    "Use a pale tint of the accent colour as the page background so the saturated title and the background read as one hue.",
+    "Give each scroll step one text block and move it between left and right gutters at varying heights instead of stacking sections."
+   ]
+  }
+ ],
+ "scenes": []
+}

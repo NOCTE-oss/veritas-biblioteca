@@ -1,68 +1,40 @@
 <script setup>
-defineProps ({
-    nome: String,
-    imagem: String,
-    ativa: Boolean,
+defineProps({
+  nome: String,
+  imagem: String,
+  ativa: Boolean,
 })
 </script>
+
 <template>
-    <article class="category-card" :class="{ativa: ativa}">
-        <img v-if="imagem" :src="imagem" :alt="nome" class="imagem" />
-        <div v-else class="imagem imagem-vazia"></div>
+  <article
+    :class="
+      ativa
+        ? 'border-ouro shadow-[0_0_24px_rgb(201_169_110/0.35)]'
+        : 'border-fio hover:border-ouro/70'
+    "
+    class="group relative h-60 w-32 cursor-pointer overflow-hidden border transition duration-500 sm:w-36"
+  >
+    <img
+      v-if="imagem"
+      :src="imagem"
+      :alt="nome"
+      class="h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
+    />
+    <div v-else class="h-full w-full bg-linear-to-b from-couro to-noite"></div>
 
-        <div class="rodape">
-            <span class="nome">{{ nome }}</span>
-            <span class="linha"></span>
-        </div>
-    </article>
+    <div
+      class="absolute inset-x-0 bottom-0 bg-linear-to-t from-noite/90 to-transparent px-1 pb-4 pt-10 text-center"
+    >
+      <span
+        class="block font-label text-[0.62rem] uppercase tracking-[0.12em] text-pergaminho"
+      >
+        {{ nome }}
+      </span>
+      <span
+        :class="ativa ? 'w-12' : 'w-6 group-hover:w-12'"
+        class="mx-auto mt-3 block h-px bg-ouro transition-all duration-500"
+      ></span>
+    </div>
+  </article>
 </template>
-
-<style scoped>
-.category-card {
-  position: relative;
-  width: 120px;
-  height: 240px;
-  border: 1px solid #5a4a3a;
-  overflow: hidden;
-  cursor: pointer;
-}
-.imagem {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.imagem-vazia {
-  background: linear-gradient(180deg, #2a221b, #14110f);
-}
-.rodape {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 14px 8px;
-  text-align: center;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-}
-.nome {
-  display: block;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #e8dfd0;
-}
-.linha {
-  display: block;
-  width: 24px;
-  height: 1px;
-  margin: 8px auto 0;
-  background: #c9a96e;
-}
-.category-card:hover {
-  border-color: #c9a96e;
-}
-.category-card.ativa {
-  border-color: #c9a96e;
-  box-shadow: 0 0 12px rgba(201, 169, 110, 0.5);
-}
-</style>

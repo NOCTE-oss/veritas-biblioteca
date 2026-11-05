@@ -1,5 +1,6 @@
 <script setup>
 defineProps({
+  chamada: { type: String, default: 'Mais que livros' },
   titulo: { type: String, default: 'Leia o que atravessa os séculos' },
   subtitulo: {
     type: String,
@@ -14,29 +15,62 @@ defineEmits(['click-botao'])
 
 <template>
   <section
-    class="relative flex min-h-[380px] items-center justify-center border-b border-[#5a4a3a] bg-[#14110f] bg-cover bg-center bg-no-repeat px-6 py-16 text-center md:px-10"
+    class="relative isolate flex min-h-[78vh] items-center overflow-hidden border-b border-fio bg-cover bg-center px-6 py-24 md:px-16"
     :style="imagem ? { backgroundImage: `url(${imagem})` } : {}"
   >
-    <!-- Camada escura por cima da imagem (era o linear-gradient) -->
-    <div class="absolute inset-0 bg-gradient-to-b from-[#14110f]/20 to-[#14110f]/80"></div>
+    <!-- Véu escuro por cima da foto (some o fundo atrás do texto) -->
+    <div class="absolute inset-0 -z-10 bg-linear-to-r from-noite via-noite/80 to-noite/30"></div>
 
-    <div class="relative z-10 max-w-2xl">
-      <span class="mx-auto mb-6 block h-px w-10 bg-[#c9a96e]"></span>
+    <!-- Brilho de vela -->
+    <div
+      class="pointer-events-none absolute -right-24 top-1/4 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgb(201_169_110/0.22),transparent_65%)] blur-2xl"
+    ></div>
 
-      <h1 class="mb-4 text-3xl font-normal leading-tight text-[#f0e6d6] md:text-5xl">
-        {{ titulo }}
-      </h1>
+    <div class="mx-auto flex w-full max-w-6xl items-end justify-between gap-12">
+      <div class="max-w-2xl">
+        <p
+          class="mb-8 flex items-center gap-4 font-label text-[0.7rem] uppercase tracking-[0.4em] text-ouro motion-safe:animate-subir"
+        >
+          <span class="h-px w-12 bg-ouro"></span>
+          {{ chamada }}
+        </p>
 
-      <p class="mb-8 text-base italic text-[#d9cfc0] md:text-lg">
-        {{ subtitulo }}
-      </p>
+        <h1
+          class="font-display text-5xl font-medium leading-[1.02] text-pergaminho md:text-7xl motion-safe:animate-subir [animation-delay:120ms]"
+        >
+          {{ titulo }}
+        </h1>
 
-      <button
-        class="cursor-pointer border border-[#c9a96e] px-7 py-3 font-serif text-xs uppercase tracking-[3px] text-[#c9a96e] transition hover:bg-[#c9a96e] hover:text-[#14110f]"
-        @click="$emit('click-botao')"
+        <p
+          class="mt-8 max-w-md text-xl italic text-cinza-quente motion-safe:animate-subir [animation-delay:240ms]"
+        >
+          {{ subtitulo }}
+        </p>
+
+        <button
+          type="button"
+          class="group relative mt-10 active:scale-[0.97] inline-flex cursor-pointer items-center gap-4 overflow-hidden border border-ouro px-8 py-4 font-label text-[0.7rem] font-medium uppercase tracking-[0.3em] text-ouro transition-colors duration-500 hover:text-noite focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ouro-claro motion-safe:animate-subir [animation-delay:360ms]"
+          @click="$emit('click-botao')"
+        >
+          <!-- Camada dourada que "varre" o botão da esquerda pra direita no hover -->
+          <span
+            class="absolute inset-0 origin-left scale-x-0 bg-ouro transition-transform duration-500 ease-out group-hover:scale-x-100"
+          ></span>
+          <span class="relative">{{ botao }}</span>
+          <span
+            class="relative transition-transform duration-500 group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            →
+          </span>
+        </button>
+      </div>
+
+      <p
+        class="hidden border-l border-fio pl-6 font-label text-[0.65rem] uppercase leading-loose tracking-[0.3em] text-cinza-quente lg:block"
       >
-        {{ botao }}
-      </button>
+        Ler<br />é também<br />uma forma<br />de viver<br />mais.
+      </p>
     </div>
   </section>
 </template>

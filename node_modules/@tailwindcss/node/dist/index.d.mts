@@ -259,4 +259,15 @@ interface SourceMap {
 }
 declare function toSourceMap(map: DecodedSourceMap | string): SourceMap;
 
-export { type CompileOptions, type DecodedSource, type DecodedSourceMap, Instrumentation, type OptimizeOptions, type Resolver, type SourceMap, type TransformResult, __unstable__loadDesignSystem, compile, compileAst, env, loadModule, normalizePath, optimize, toSourceMap };
+/**
+ * Rewrites the URLs of each declaration in the AST from being relative to the
+ * folder `base` returns for it to being relative to `root`. Declarations for
+ * which `base` returns `null` are left as-is.
+ */
+declare function rewriteUrlsInAst({ ast, base, root, }: {
+    ast: AstNode[];
+    base: (node: Declaration) => string | null;
+    root: string;
+}): Promise<void>;
+
+export { type CompileOptions, type DecodedSource, type DecodedSourceMap, Instrumentation, type OptimizeOptions, type Resolver, type SourceMap, type TransformResult, __unstable__loadDesignSystem, compile, compileAst, env, loadModule, normalizePath, optimize, rewriteUrlsInAst, toSourceMap };

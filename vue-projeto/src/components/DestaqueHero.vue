@@ -1,18 +1,29 @@
 <script setup>
 import BookCard from './BookCard.vue'
 
-const props = defineProps({
+defineProps({
   livrosDestaque: Array,
   totalLivros: Number,
   totalCategorias: Number,
 })
+
+const emit = defineEmits(['explorar'])
+
+function rolarParaEstante(evento) {
+  evento.preventDefault()
+  emit('explorar')
+  const elemento = document.getElementById('estante')
+  if (elemento) {
+    elemento.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <template>
-  <section class="relative overflow-hidden bg-[#14110f] px-6 py-24 text-center">
+  <section class="relative overflow-hidden border-b border-fio px-6 py-28 text-center">
     <!-- Livros flutuando: só aparecem em telas médias pra cima -->
     <div class="pointer-events-none absolute inset-0 hidden md:block">
-      <div class="absolute left-10 top-16 -rotate-6">
+      <div class="absolute left-10 top-20 -rotate-6 lg:left-24">
         <BookCard
           v-if="livrosDestaque[0]"
           :titulo="livrosDestaque[0].titulo"
@@ -21,7 +32,7 @@ const props = defineProps({
           :capa="livrosDestaque[0].capa"
         />
       </div>
-      <div class="absolute right-10 top-24 rotate-6">
+      <div class="absolute right-10 top-28 rotate-6 lg:right-24">
         <BookCard
           v-if="livrosDestaque[1]"
           :titulo="livrosDestaque[1].titulo"
@@ -34,30 +45,49 @@ const props = defineProps({
 
     <!-- Conteúdo central -->
     <div class="relative z-10 mx-auto max-w-2xl">
-      <h2 class="font-serif text-4xl font-normal leading-tight text-[#f0e6d6] md:text-6xl">
-        Qual Livro Você Quer
-        <span class="text-[#c9a96e]">Descobrir Hoje?</span>
-      </h2>
-
-      <p class="mx-auto mt-6 max-w-md text-[#d9cfc0]">
-        Explore nossa seleção cuidadosa de livros que moldam mentes e
-        despertam ideias.
+      <p class="mb-6 font-label text-[0.7rem] uppercase tracking-[0.4em] text-ouro">
+        Acervo
       </p>
 
-      <button
-        class="mt-8 border border-[#c9a96e] px-8 py-3 uppercase tracking-widest text-[#c9a96e] transition hover:bg-[#c9a96e] hover:text-[#14110f]"
-      >
-        Explorar Agora
-      </button>
+      <h2 class="text-5xl font-medium leading-[1.05] text-pergaminho md:text-7xl">
+        Qual livro você quer
+        <em class="text-ouro">descobrir hoje?</em>
+      </h2>
 
-      <div class="mt-16 flex justify-center gap-16">
+      <p class="mx-auto mt-8 max-w-md text-xl italic text-cinza-quente">
+        Explore nossa seleção cuidadosa de livros que moldam mentes e despertam ideias.
+      </p>
+
+      <a
+        href="#estante"
+        class="group relative mt-10 active:scale-[0.97] inline-flex items-center gap-4 overflow-hidden border border-ouro px-8 py-4 font-label text-[0.7rem] font-medium uppercase tracking-[0.3em] text-ouro transition-colors duration-500 hover:text-noite focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ouro-claro"
+        @click="rolarParaEstante"
+      >
+        <span
+          class="absolute inset-0 origin-left scale-x-0 bg-ouro transition-transform duration-500 ease-out group-hover:scale-x-100"
+        ></span>
+        <span class="relative">Explorar agora</span>
+        <span
+          class="relative transition-transform duration-500 group-hover:translate-x-1"
+          aria-hidden="true"
+        >
+          →
+        </span>
+      </a>
+
+      <div class="mt-20 flex items-center justify-center gap-12">
         <div>
-          <p class="text-3xl font-bold text-[#c9a96e]">{{ totalLivros }}+</p>
-          <p class="text-sm text-[#d9cfc0]">Livros Selecionados</p>
+          <p class="text-5xl font-medium text-ouro">{{ totalLivros }}+</p>
+          <p class="mt-1 font-label text-[0.65rem] uppercase tracking-[0.3em] text-cinza-quente">
+            Livros selecionados
+          </p>
         </div>
+        <span class="h-12 w-px bg-fio"></span>
         <div>
-          <p class="text-3xl font-bold text-[#c9a96e]">{{ totalCategorias }}</p>
-          <p class="text-sm text-[#d9cfc0]">Categorias</p>
+          <p class="text-5xl font-medium text-ouro">{{ totalCategorias }}</p>
+          <p class="mt-1 font-label text-[0.65rem] uppercase tracking-[0.3em] text-cinza-quente">
+            Categorias
+          </p>
         </div>
       </div>
     </div>

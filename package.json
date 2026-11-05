@@ -2,5 +2,9 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/jost": "^5.3.0"
   }
 }

@@ -58,6 +58,13 @@ function selecionarCategoria(nome) {
     categoriaSelecionada.value = nome
   }
 }
+
+function rolarParaEstante() {
+  const elemento = document.getElementById('estante')
+  if (elemento) {
+    elemento.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <template>
@@ -65,10 +72,14 @@ function selecionarCategoria(nome) {
     :livrosDestaque="[livros[0], livros[2]]"
     :totalLivros="livros.length"
     :totalCategorias="categorias.length"
-    />
-    <EstanteLivros :livros="livros" />
+    @explorar="rolarParaEstante"
+  />
+  <EstanteLivros :livros="livros" />
   <main class="app">
-    <HeroBanner imagem="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000&q=90" />
+    <HeroBanner
+      imagem="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000&q=90"
+      @click-botao="rolarParaEstante"
+    />
 
     <h2 class="secao-titulo">Livros em destaque</h2>
 
