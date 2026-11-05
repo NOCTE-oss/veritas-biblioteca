@@ -18,6 +18,7 @@ const props = defineProps({
           :titulo="livrosDestaque[0].titulo"
           :autor="livrosDestaque[0].autor"
           :categoria="livrosDestaque[0].categoria"
+          :capa="livrosDestaque[0].capa"
         />
       </div>
       <div class="absolute right-10 top-24 rotate-6">
@@ -26,6 +27,7 @@ const props = defineProps({
           :titulo="livrosDestaque[1].titulo"
           :autor="livrosDestaque[1].autor"
           :categoria="livrosDestaque[1].categoria"
+          :capa="livrosDestaque[1].capa"
         />
       </div>
     </div>

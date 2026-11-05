@@ -7,21 +7,24 @@ import HeroBanner from './components/HeroBanner.vue'
 import AppFooter from './components/AppFooter.vue'
 import QuoteBlock from './components/QuoteBlock.vue'
 import DestaqueHero from './components/DestaqueHero.vue'
+import EstanteLivros from './components/EstanteLivros.vue'
 
 const busca = ref('')
 const categoriaSelecionada = ref('')
+const capaGoogleBooks = (id) =>
+  `https://books.google.com/books/content?id=${id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`
 
 const livros = ref([
-  { id: 1, titulo: 'Sapiens', autor: 'Yuval Noah Harari', categoria: 'História', capa: 'https://books.google.com/books/content?id=uCt-BwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
-  { id: 2, titulo: 'O Príncipe', autor: 'Nicolau Maquiavel', categoria: 'Política', capa: 'https://books.google.com/books/content?id=UDrzAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
-  { id: 3, titulo: '1984', autor: 'George Orwell', categoria: 'Literatura', capa: 'https://books.google.com/books/content?id=kotPYEqx7kMC&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
-  { id: 4, titulo: 'A Arte da Guerra', autor: 'Sun Tzu', categoria: 'Estratégia', capa: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9GLa3h8U_9pCK3bXZd49dtFn_twt6tmqeRh9HFJ9i_w&s=10' },
-  { id: 5, titulo: 'O Código Da Vinci', autor: 'Dan Brown', categoria: 'Literatura', capa: 'https://books.google.com/books/content?id=gV1nhvItuoAC&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
-  { id: 6, titulo: 'Crime e Castigo', autor: 'Fiódor Dostoiévski', categoria: 'Filosofia', capa: 'https://books.google.com/books/content?id=OxmmBAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
-  { id: 7, titulo: 'Uma Breve História do Tempo', autor: 'Stephen Hawking', categoria: 'Ciência', capa: 'https://books.google.com/books/content?id=FrcPBgAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
-  { id: 8, titulo: 'Steve Jobs', autor: 'Walter Isaacson', categoria: 'Biografias', capa: 'https://books.google.com/books/content?id=LbuZEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
-  { id: 9, titulo: 'Hábitos Atômicos', autor: 'James Clear', categoria: 'Desenvolvimento Pessoal', capa: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSviqUG9qBZFLpiP1g8UuPTgFWX7FmSLR6i4jcuRRotqQ&s=10' },
-  { id: 10, titulo: 'O Homem Mais Rico da Babilônia', autor: 'George S. Clason', categoria: 'Desenvolvimento Pessoal', capa: 'https://books.google.com/books/content?id=eUxWEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api' },
+  { id: 1, titulo: 'Sapiens', autor: 'Yuval Noah Harari', categoria: 'História', capa: capaGoogleBooks('uCt-BwAAQBAJ') },
+  { id: 2, titulo: 'O Príncipe', autor: 'Nicolau Maquiavel', categoria: 'Política', capa: capaGoogleBooks('44ZXDwAAQBAJ') },
+  { id: 3, titulo: '1984', autor: 'George Orwell', categoria: 'Literatura', capa: capaGoogleBooks('kotPYEqx7kMC') },
+  { id: 4, titulo: 'A Arte da Guerra', autor: 'Sun Tzu', categoria: 'Estratégia', capa: capaGoogleBooks('ubfsEAAAQBAJ') },
+  { id: 5, titulo: 'O Código Da Vinci', autor: 'Dan Brown', categoria: 'Literatura', capa: capaGoogleBooks('gV1nhvItuoAC') },
+  { id: 6, titulo: 'Crime e Castigo', autor: 'Fiódor Dostoiévski', categoria: 'Filosofia', capa: capaGoogleBooks('OxmmBAAAQBAJ') },
+  { id: 7, titulo: 'Uma Breve História do Tempo', autor: 'Stephen Hawking', categoria: 'Ciência', capa: capaGoogleBooks('FrcPBgAAQBAJ') },
+  { id: 8, titulo: 'Steve Jobs', autor: 'Walter Isaacson', categoria: 'Biografias', capa: capaGoogleBooks('LbuZEAAAQBAJ') },
+  { id: 9, titulo: 'Hábitos Atômicos', autor: 'James Clear', categoria: 'Desenvolvimento Pessoal', capa: capaGoogleBooks('qI6iDwAAQBAJ') },
+  { id: 10, titulo: 'O Homem Mais Rico da Babilônia', autor: 'George S. Clason', categoria: 'Desenvolvimento Pessoal', capa: capaGoogleBooks('eUxWEAAAQBAJ') },
 ])
 
 const categorias = ref([
@@ -63,6 +66,7 @@ function selecionarCategoria(nome) {
     :totalLivros="livros.length"
     :totalCategorias="categorias.length"
     />
+    <EstanteLivros :livros="livros" />
   <main class="app">
     <HeroBanner imagem="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000&q=90" />
 
