@@ -26,12 +26,14 @@ jobs:
           node-version: 24
           cache: npm
           cache-dependency-path: vue-projeto/package-lock.json
-      - name: Install dependencies
+      - name: Install root dependencies (Tailwind CSS)
+        run: npm ci --include=optional
+      - name: Install Vue app dependencies
         run: npm ci --include=optional
         working-directory: vue-projeto
-      - name: Ensure Linux Lightning CSS binary is installed
-        run: npm install --no-save --include=optional lightningcss-linux-x64-gnu@1.33.0
-        working-directory: vue-projeto
+      - name: Verify Lightning CSS native binary
+        run: node -e "require('lightningcss'); console.log('Lightning CSS loaded successfully')"
+        working-directory: .
       - name: Build Vue app
         run: npm run build
         working-directory: vue-projeto
