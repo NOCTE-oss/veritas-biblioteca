@@ -1,0 +1,7 @@
+<script setup>
+import { ref } from 'vue'
+const nome=ref(''), email=ref(''), mensagem=ref(''), enviado=ref(false)
+function enviar(){enviado.value=true}
+</script>
+<template><main class="pagina"><h1>Contato</h1><p>Envie uma mensagem ou sugestão para o projeto Veritas.</p><form @submit.prevent="enviar"><label>Nome<input v-model="nome" required placeholder="Seu nome"/></label><label>E-mail<input v-model="email" type="email" required placeholder="seu@email.com"/></label><label>Mensagem<textarea v-model="mensagem" required rows="5" placeholder="Escreva sua mensagem"/></label><button type="submit">Enviar mensagem</button><p v-if="enviado" class="ok">Mensagem registrada nesta demonstração. Obrigado!</p></form></main></template>
+<style scoped>.pagina{max-width:700px;margin:60px auto;padding:32px;color:#e9dfd0;min-height:55vh}.pagina h1{color:#c9a96e;font-size:2.5rem}.pagina p{line-height:1.7}form{display:grid;gap:18px;margin-top:28px}label{display:grid;gap:8px}input,textarea{padding:12px;background:#211c18;border:1px solid #766344;border-radius:5px;color:#eee;font:inherit}button{width:max-content;padding:12px 20px;background:#c9a96e;border:0;border-radius:5px;color:#14110f;cursor:pointer}.ok{color:#b9d8a8}</style>
