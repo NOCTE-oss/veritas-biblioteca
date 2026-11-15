@@ -28,6 +28,9 @@ jobs:
           cache-dependency-path: vue-projeto/package-lock.json
       - name: Install root dependencies (Tailwind CSS)
         run: npm ci --include=optional
+      - name: Update Vue app lockfile for router dependency
+        run: npm install --package-lock-only --include=optional
+        working-directory: vue-projeto
       - name: Install Vue app dependencies
         run: npm ci --include=optional
         working-directory: vue-projeto
