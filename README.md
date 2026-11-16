@@ -56,3 +56,55 @@ responsivo com sm: e lg:."
 **Etapa: correção de problemas na integração**
 "O Tailwind não está aplicando estilos nos componentes. Revise meu vite.config.js
 e main.js."
+
+
+---
+
+## Navegação com Vue Router (3ª etapa)
+
+Nesta etapa, o Veritas passou a utilizar **Vue Router 4** para organizar a aplicação em páginas e permitir navegação no formato de **Single Page Application (SPA)**, sem recarregamento completo a cada troca de rota.
+
+### Rotas disponíveis
+
+| Caminho | Página | Descrição |
+| --- | --- | --- |
+| `/` | Início | Biblioteca virtual, destaques, busca e categorias. |
+| `/sobre` | Sobre | Apresentação e objetivo do projeto Veritas. |
+| `/contato` | Contato | Formulário demonstrativo de contato. |
+
+### Implementação
+
+- Vue Router 4 instalado como dependência do projeto.
+- Configuração das rotas em `src/router/index.js`.
+- Páginas organizadas em componentes na pasta `src/views/`:
+  - `HomeView.vue`
+  - `SobreView.vue`
+  - `ContatoView.vue`
+- Menu de navegação com `RouterLink` para acessar as páginas.
+- `RouterView` para renderizar o conteúdo da rota atual.
+- `createWebHashHistory()` utilizado para compatibilidade com o GitHub Pages.
+- Formulário de contato ilustrativo: não envia mensagens para um servidor ou e-mail.
+
+### Como executar localmente
+
+Entre na pasta do projeto Vue e instale as dependências:
+
+```bash
+cd vue-projeto
+npm install
+npm run dev
+```
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+```
+
+### Publicação
+
+O projeto é publicado pelo **GitHub Actions** no GitHub Pages:
+
+- Repositório: https://github.com/NOCTE-oss/veritas-biblioteca
+- Site: https://nocte-oss.github.io/veritas-biblioteca/
+- Workflow: `.github/workflows/deploy.yml`
