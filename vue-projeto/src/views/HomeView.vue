@@ -80,7 +80,7 @@ async function buscarLivrosApi() {
   }
 }
 onMounted(buscarLivrosApi)
-</script>>
+</script>
 <template>
   <DestaqueHero :livrosDestaque="[livros[0], livros[2]]" :totalLivros="livros.length" :totalCategorias="categorias.length" @explorar="rolarParaEstante" />
   <EstanteLivros :livros="livros" />
