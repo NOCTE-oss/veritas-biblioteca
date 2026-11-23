@@ -108,3 +108,26 @@ O projeto é publicado pelo **GitHub Actions** no GitHub Pages:
 - Repositório: https://github.com/NOCTE-oss/veritas-biblioteca
 - Site: https://nocte-oss.github.io/veritas-biblioteca/
 - Workflow: `.github/workflows/deploy.yml`
+
+
+---
+
+## Integração com API externa (Google Books)
+
+A biblioteca agora consulta a **Google Books API** para trazer resultados de livros dinamicamente.
+
+### Funcionalidades adicionadas
+
+- Requisição HTTP `GET` com `fetch()` para a API pública do Google Books.
+- Busca por título, autor ou assunto digitado pelo usuário.
+- Renderização dos resultados com recursos reativos do Vue (`ref`, `v-for`, `v-if` e interpolação).
+- Exibição de capa, título e autores dos resultados.
+- Modal de detalhes com descrição, categoria, data de publicação, número de páginas e link externo, quando esses dados estão disponíveis.
+- Estados de carregamento, erros e busca sem resultados.
+- Busca inicial automática de livros em português ao abrir a página.
+
+
+### Como funciona a integração
+
+A página `src/views/HomeView.vue` consulta o endpoint de volumes da Google Books API com o termo de pesquisa informado, transforma a resposta em uma lista de dados e exibe os livros na interface. Os resultados podem ser consultados e os detalhes abertos no modal.
+
